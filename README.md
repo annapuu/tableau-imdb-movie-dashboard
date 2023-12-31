@@ -1,1 +1,1 @@
-# tableau-imdb-movies-dashboard
+# IMDB Movie Dashboard (Tableau)
