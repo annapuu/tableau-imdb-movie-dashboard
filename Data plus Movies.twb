@@ -1,0 +1,2819 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20233.23.1205.1338                               -->
+<workbook original-version='18.1' source-build='2023.3.0 (20233.23.1205.1338)' version='18.1' xml:base='http://localhost:9100' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <CascadingFiltersHamburgerUI />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <MapboxVectorStylesAndLayers />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+  </document-format-change-manifest>
+  <repository-location derived-from='http://localhost:9100/workbooks/DataplusMovies?rev=2.9' id='DataplusMovies' path='/workbooks' revision='3.1' />
+  <preferences />
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Vote threshold' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='10000'>
+        <calculation class='tableau' formula='10000' />
+        <range granularity='10000' max='2000000' min='0' />
+      </column>
+      <column caption='Movie Threshold' datatype='integer' datatype-customized='true' name='[Parameter 2]' param-domain-type='range' role='measure' type='quantitative' value='2500'>
+        <calculation class='tableau' formula='2500' />
+        <range granularity='50' max='10000' min='50' />
+      </column>
+      <column caption='Production Company' datatype='string' name='[Parameter 3]' param-domain-type='any' role='measure' type='nominal' value='&quot;Marvel Studios&quot;'>
+        <calculation class='tableau' formula='&quot;Marvel Studios&quot;' />
+      </column>
+      <column caption='Genre search' datatype='string' name='[Production Company (copy)_2043508340865777664]' param-domain-type='any' role='measure' type='nominal' value='&quot;Fantasy&quot;'>
+        <calculation class='tableau' formula='&quot;Fantasy&quot;' />
+      </column>
+    </datasource>
+    <datasource caption='IMDB movies and people Extract' inline='true' name='federated.0uydhq71ekj7nt13f7jp60qx5vg3' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='IMDB movies and people' name='hyper.14qye6e0nymo6x1622w5m1ufwn23'>
+            <connection authentication='auth-none' author-locale='de_DE' class='hyper' dbname='Data/Extracts/hyper_14qye6e0nymo6x1622w5m1ufwn.hyper' default-settings='yes' schema='Extract' tablename='Extract' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='hyper.14qye6e0nymo6x1622w5m1ufwn23' name='Extract' table='[Extract].[Extract]' type='table' />
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='hyper.14qye6e0nymo6x1622w5m1ufwn23' name='Extract' table='[Extract].[Extract]' type='table' />
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Production Companies (List)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Production Companies (List)]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Production Companies (List)</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>225313</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_6054C52422754E398C4C0F9470CF4350]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Best Picture</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Best Picture]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Best Picture</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>2</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LROOT' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_6054C52422754E398C4C0F9470CF4350]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Certificate (GB)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Certificate (GB)]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Certificate (GB)</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>15</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_6054C52422754E398C4C0F9470CF4350]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Certificate (US)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Certificate (US)]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Certificate (US)</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>23</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_6054C52422754E398C4C0F9470CF4350]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>imdbUrl (Person)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[imdbUrl (Person)]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>imdbUrl (Person)</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>468055</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_6054C52422754E398C4C0F9470CF4350]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Person Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Person Name]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Person Name</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>466875</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_6054C52422754E398C4C0F9470CF4350]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Person Name ID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Person Name ID]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Person Name ID</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>468055</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_6054C52422754E398C4C0F9470CF4350]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>titleId</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[titleId]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>titleId</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>314388</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_6054C52422754E398C4C0F9470CF4350]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>What did they do ?</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[What did they do ?]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>What did they do ?</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>2</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_6054C52422754E398C4C0F9470CF4350]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Who did they play ?</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Who did they play ?]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Who did they play ?</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>194689</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_6054C52422754E398C4C0F9470CF4350]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Billing (position in cast list)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Billing (position in cast list)]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Billing (position in cast list)</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>20</approx-count>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_6054C52422754E398C4C0F9470CF4350]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Plot</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Plot]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Plot</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>289714</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_6054C52422754E398C4C0F9470CF4350]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Plot (medium)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Plot (medium)]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Plot (medium)</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>219892</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_6054C52422754E398C4C0F9470CF4350]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Genres (full list)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Genres (full list)]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Genres (full list)</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>6962</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_6054C52422754E398C4C0F9470CF4350]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>genres (1st)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[genres (1st)]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>genres (1st)</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>30</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_6054C52422754E398C4C0F9470CF4350]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>genres (2nd)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[genres (2nd)]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>genres (2nd)</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>21</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_6054C52422754E398C4C0F9470CF4350]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>genres (3rd)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[genres (3rd)]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>genres (3rd)</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>21</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_6054C52422754E398C4C0F9470CF4350]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>runtime (minutes)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[runtime (minutes)]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>runtime (minutes)</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>417</approx-count>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_6054C52422754E398C4C0F9470CF4350]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>imdbUrl (title)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[imdbUrl (title)]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>imdbUrl (title)</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>314388</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_6054C52422754E398C4C0F9470CF4350]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Title</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Title]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Title</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>278905</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_6054C52422754E398C4C0F9470CF4350]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Year of Release</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Year of Release]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Year of Release</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>23</approx-count>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_6054C52422754E398C4C0F9470CF4350]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>color</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[color]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>color</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>5</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_6054C52422754E398C4C0F9470CF4350]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Production Companies (1st)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Production Companies (1st)]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Production Companies (1st)</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>110834</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_6054C52422754E398C4C0F9470CF4350]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Production Companies (2nd)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Production Companies (2nd)]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Production Companies (2nd)</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>73724</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_6054C52422754E398C4C0F9470CF4350]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Production Companies (3rd)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Production Companies (3rd)]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Production Companies (3rd)</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>48920</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_6054C52422754E398C4C0F9470CF4350]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>image_url (title)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[image_url (title)]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>image_url (title)</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>304958</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_6054C52422754E398C4C0F9470CF4350]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>imdb rating</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[imdb rating]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>imdb rating</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>108</approx-count>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_6054C52422754E398C4C0F9470CF4350]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>number of votes</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[number of votes]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>number of votes</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>28057</approx-count>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_6054C52422754E398C4C0F9470CF4350]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tagline</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[tagline]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>tagline</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>147600</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_6054C52422754E398C4C0F9470CF4350]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Continent</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Continent]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Continent</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>6</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RGB_S2' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_6054C52422754E398C4C0F9470CF4350]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Region</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Region]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Region</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>24</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RGB_S2' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_6054C52422754E398C4C0F9470CF4350]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Country</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Country]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Country</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>238</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RGB_S2' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_6054C52422754E398C4C0F9470CF4350]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Language</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Language]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Language</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>179</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RGB_S2' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Extract (Extract.Extract)_6054C52422754E398C4C0F9470CF4350]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[:Measure Names]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[avg:imdb rating:qk]&quot;' value='Rating' />
+          <alias key='&quot;[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[avg:number of votes:qk]&quot;' value='Votes' />
+          <alias key='&quot;[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[cnt:number of votes:qk]&quot;' value='Count of Votes' />
+          <alias key='&quot;[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[min:Year of Release:qk]&quot;' value='Movies since:' />
+          <alias key='&quot;[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350463983618:qk]&quot;' value='Titles' />
+          <alias key='&quot;[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350465458179:qk]&quot;' value='People:' />
+        </aliases>
+      </column>
+      <column datatype='string' name='[Best Picture]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>Was the picture </run>
+            <run bold='true' fontcolor='#ae123a'>Nominated </run>
+            <run>or a </run>
+            <run bold='true' fontcolor='#ae123a'>Winner</run>
+            <run> of Best Picture?</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column datatype='integer' name='[Billing (position in cast list)]' role='measure' type='quantitative'>
+        <desc>
+          <formatted-text>
+            <run>The Billing represents the position in the cast list this person appeared. Number 1 represents top billing. For this dataset we only have the top 50 people in each title.</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column caption='Number of votes over threshold (LOD)' datatype='boolean' name='[Calculation_1145321685936238594]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='{ FIXED [titleId]: AVG([number of votes]) }&gt;= [Parameters].[Parameter 1]' />
+        <desc>
+          <formatted-text>
+            <run>This is a calculation used to filter the dashboard. It works in conjunction with the Movie Threshold parameter.</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column caption='Contains Production Company?' datatype='boolean' name='[Calculation_2283606494275465216]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='CONTAINS(LOWER([Production Companies (List)]), LOWER([Parameters].[Parameter 3]))' />
+        <desc>
+          <formatted-text>
+            <run>Returns TRUE if the </run>
+            <run bold='true' fontcolor='#f28e2b'>Production Companies</run>
+            <run> list field contains the string in the </run>
+            <run bold='true' fontcolor='#b07aa1'>Production Company </run>
+            <run>parameter.</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column caption='Number of titles' datatype='integer' name='[Calculation_659777350463983618]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='// a count distincy of the number of Titles in the dataset&#13;&#10;COUNTD([titleId])' />
+        <desc>
+          <formatted-text>
+            <run>The distinct number of people in the database.</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column caption='Number of people' datatype='integer' name='[Calculation_659777350465458179]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNTD([Person Name ID])' />
+        <desc>
+          <formatted-text>
+            <run>The distinct number of people in the database.</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column datatype='string' name='[Certificate (GB)]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>What rating certificate was this film given in Great Britain?</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column datatype='string' name='[Certificate (US)]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>What rating certificate was this film given in USA?</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column caption='Contains Genre?' datatype='boolean' name='[Contains Production Company? (copy)_2043508340865888257]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='CONTAINS(LOWER([Genres (full list)]), LOWER([Parameters].[Production Company (copy)_2043508340865777664]))' />
+        <desc>
+          <formatted-text>
+            <run>Returns TRUE if the </run>
+            <run bold='true' fontcolor='#f28e2b' italic='true'>Contains Genre?</run>
+            <run> list field contains the string in the </run>
+            <run bold='true' fontcolor='#b07aa1' italic='true'>Genre Search</run>
+            <run bold='true' fontcolor='#b07aa1'>Æ </run>
+            <run>parameter.</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column datatype='string' name='[Continent]' role='dimension' type='nominal' />
+      <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>This is the country of the primary production company associated with this title.
+(</run>
+            <run bold='true' fontcolor='#ae123a'>Data warning</run>
+            <run>: the way the IMDB data is stored means many movies do not associate to the country you might at first think they do)</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column datatype='string' name='[Genres (full list)]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>The </run>
+            <run bold='true' underline='true'>full</run>
+            <run> Genre field (might contain many genres). 
+
+Where a movie has multiple Genres, there is no specific order in where they appear in the list. For example. </run>
+            <run bold='true'>Interstellar</run>
+            <run>&apos;s genre list is &quot;</run>
+            <run italic='true'>Adventure, Drama, Sci-Fi</run>
+            <run>&quot; whereas </run>
+            <run bold='true'>Guardians of the Galaxy </run>
+            <run>is &quot;</run>
+            <run italic='true'>Action, Adventure, Comedy, Sci-Fi</run>
+            <run>&quot;
+
+If you want to do an accurate Genre analysis, you should create calculations that look for instances of the Genre you are interested in. The parameter </run>
+            <run bold='true' fontcolor='#b07aa1' italic='true'>Genre Search</run>
+            <run italic='true'>Æ </run>
+            <run>and calculation </run>
+            <run bold='true' fontcolor='#f28e2b' italic='true'>Contains Genre?</run>
+            <run> are examples of how to do this.</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column datatype='string' name='[Language]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>This is the primary language spoken in the title</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column datatype='string' name='[Person Name ID]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>The IMDB id for the person.</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column datatype='string' name='[Person Name]' role='dimension' type='nominal' />
+      <column datatype='string' name='[Production Companies (1st)]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>The </run>
+            <run bold='true' underline='true'>first</run>
+            <run> listed Production Company. 
+
+Where a movie has multiple Production Companies, there is no specific order in where they appear in the list. For example. </run>
+            <run bold='true'>Aveneger&apos;s Endgame</run>
+            <run>&apos;s production company list is &quot;</run>
+            <run italic='true'>Marvel Studios; Walt Disney Pictures</run>
+            <run>&quot; whereas </run>
+            <run bold='true'>Spider-Man: Far From Home  </run>
+            <run>is &quot;</run>
+            <run italic='true'>Columbia Pictures; Pascal Pictures; Marvel Studios</run>
+            <run>&quot;
+
+If you want to do an accurate production company analysis, you should create calculations that look for instances of the production company you are interested in. The parameter </run>
+            <run bold='true' fontcolor='#b07aa1' italic='true'>Production Company</run>
+            <run italic='true'>Æ </run>
+            <run>and calculation </run>
+            <run bold='true' fontcolor='#f28e2b' italic='true'>Contains Production Company</run>
+            <run> are examples of how to do this.</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column datatype='string' name='[Production Companies (2nd)]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>The </run>
+            <run bold='true' underline='true'>second</run>
+            <run> listed Production Company. 
+
+Where a movie has multiple Production Companies, there is no specific order in where they appear in the list. For example. </run>
+            <run bold='true'>Aveneger&apos;s Endgame</run>
+            <run>&apos;s production company list is &quot;</run>
+            <run italic='true'>Marvel Studios; Walt Disney Pictures</run>
+            <run>&quot; whereas </run>
+            <run bold='true'>Spider-Man: Far From Home  </run>
+            <run>is &quot;</run>
+            <run italic='true'>Columbia Pictures; Pascal Pictures; Marvel Studios</run>
+            <run>&quot;
+
+If you want to do an accurate production company analysis, you should create calculations that look for instances of the production company you are interested in. The parameter </run>
+            <run bold='true' fontcolor='#b07aa1' italic='true'>Production Company</run>
+            <run italic='true'>Æ </run>
+            <run>and calculation </run>
+            <run bold='true' fontcolor='#f28e2b' italic='true'>Contains Production Company</run>
+            <run> are examples of how to do this.</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column datatype='string' name='[Production Companies (3rd)]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>The </run>
+            <run bold='true' underline='true'>third</run>
+            <run> listed Production Company. 
+
+Where a movie has multiple Production Companies, there is no specific order in where they appear in the list. For example. </run>
+            <run bold='true'>Aveneger&apos;s Endgame</run>
+            <run>&apos;s production company list is &quot;</run>
+            <run italic='true'>Marvel Studios; Walt Disney Pictures</run>
+            <run>&quot; whereas </run>
+            <run bold='true'>Spider-Man: Far From Home  </run>
+            <run>is &quot;</run>
+            <run italic='true'>Columbia Pictures; Pascal Pictures; Marvel Studios</run>
+            <run>&quot;
+
+If you want to do an accurate production company analysis, you should create calculations that look for instances of the production company you are interested in. The parameter </run>
+            <run bold='true' fontcolor='#b07aa1' italic='true'>Production Company</run>
+            <run italic='true'>Æ </run>
+            <run>and calculation </run>
+            <run bold='true' fontcolor='#f28e2b' italic='true'>Contains Production Company</run>
+            <run> are examples of how to do this.</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column datatype='string' name='[Production Companies (List)]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>The full list of Production Companies. 
+
+Where a movie has multiple Production Companies, there is no specific order in where they appear in the list. For example. </run>
+            <run bold='true'>Aveneger&apos;s Endgame</run>
+            <run>&apos;s production company list is &quot;</run>
+            <run italic='true'>Marvel Studios; Walt Disney Pictures</run>
+            <run>&quot; whereas </run>
+            <run bold='true'>Spider-Man: Far From Home  </run>
+            <run>is &quot;</run>
+            <run italic='true'>Columbia Pictures; Pascal Pictures; Marvel Studios</run>
+            <run>&quot;
+
+If you want to do an accurate production company analysis, you should create calculations that look for instances of the production company you are interested in. The parameter </run>
+            <run bold='true' fontcolor='#b07aa1' italic='true'>Production Company</run>
+            <run italic='true'>Æ </run>
+            <run>and calculation </run>
+            <run bold='true' fontcolor='#f28e2b' italic='true'>Contains Production Company</run>
+            <run> are examples of how to do this.</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column datatype='string' name='[Title]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>The original title text of the title, normally what the title is known as in its original country of release.</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column datatype='string' name='[What did they do ?]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>What was their job in the movie. We include only </run>
+            <run bold='true' fontcolor='#ae123a'>actor</run>
+            <run>, </run>
+            <run bold='true' fontcolor='#ae123a'>actress</run>
+            <run> or </run>
+            <run bold='true' fontcolor='#ae123a'>director</run>
+            <run> in this dataset.</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column datatype='string' name='[Who did they play ?]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>The name of they character they played in this movie/show</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column aggregation='Sum' datatype='integer' default-format='n0;-0' name='[Year of Release]' role='dimension' type='quantitative'>
+        <desc>
+          <formatted-text>
+            <run>The year of the earliest release of this title globally.</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <_.fcp.ObjectModelTableType.true...column caption='Extract' datatype='table' name='[__tableau_internal_object_id__].[Extract (Extract.Extract)_6054C52422754E398C4C0F9470CF4350]' role='measure' type='quantitative' />
+      <column caption='Color' datatype='string' name='[color]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>Was the film black &amp; white, colour, or a mix?</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column caption='Genres (1st)' datatype='string' name='[genres (1st)]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>The </run>
+            <run bold='true' underline='true'>first</run>
+            <run> named Genre in the list of Genres.
+
+Where a movie has multiple Genres, there is no specific order in where they appear in the list. For example. </run>
+            <run bold='true'>Interstellar</run>
+            <run>&apos;s genre list is &quot;</run>
+            <run italic='true'>Adventure, Drama, Sci-Fi</run>
+            <run>&quot; whereas </run>
+            <run bold='true'>Guardians of the Galaxy </run>
+            <run>is &quot;</run>
+            <run italic='true'>Action, Adventure, Comedy, Sci-Fi</run>
+            <run>&quot;
+
+If you want to do an accurate Genre analysis, you should create calculations that look for instances of the Genre you are interested in. The parameter </run>
+            <run bold='true' fontcolor='#b07aa1' italic='true'>Genre Search</run>
+            <run italic='true'>Æ </run>
+            <run>and calculation </run>
+            <run bold='true' fontcolor='#f28e2b' italic='true'>Contains Genre?</run>
+            <run> are examples of how to do this.</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column caption='Genres (2nd)' datatype='string' name='[genres (2nd)]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>The </run>
+            <run bold='true' underline='true'>second</run>
+            <run> named Genre in the list of Genres.
+
+Where a movie has multiple Genres, there is no specific order in where they appear in the list. For example. </run>
+            <run bold='true'>Interstellar</run>
+            <run>&apos;s genre list is &quot;</run>
+            <run italic='true'>Adventure, Drama, Sci-Fi</run>
+            <run>&quot; whereas </run>
+            <run bold='true'>Guardians of the Galaxy </run>
+            <run>is &quot;</run>
+            <run italic='true'>Action, Adventure, Comedy, Sci-Fi</run>
+            <run>&quot;
+
+If you want to do an accurate Genre analysis, you should create calculations that look for instances of the Genre you are interested in. . The parameter </run>
+            <run bold='true' fontcolor='#b07aa1' italic='true'>Genre Search</run>
+            <run italic='true'>Æ </run>
+            <run>and calculation </run>
+            <run bold='true' fontcolor='#f28e2b' italic='true'>Contains Genre?</run>
+            <run> are examples of how to do this.</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column caption='Genres (3rd)' datatype='string' name='[genres (3rd)]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>The </run>
+            <run bold='true' underline='true'>third</run>
+            <run> named Genre in the list of Genres.
+
+Where a movie has multiple Genres, there is no specific order in where they appear in the list. For example. </run>
+            <run bold='true'>Interstellar</run>
+            <run>&apos;s genre list is &quot;</run>
+            <run italic='true'>Adventure, Drama, Sci-Fi</run>
+            <run>&quot; whereas </run>
+            <run bold='true'>Guardians of the Galaxy </run>
+            <run>is &quot;</run>
+            <run italic='true'>Action, Adventure, Comedy, Sci-Fi</run>
+            <run>&quot;
+
+If you want to do an accurate Genre analysis, you should create calculations that look for instances of the Genre you are interested in. . The parameter </run>
+            <run bold='true' fontcolor='#b07aa1' italic='true'>Genre Search</run>
+            <run italic='true'>Æ </run>
+            <run>and calculation </run>
+            <run bold='true' fontcolor='#f28e2b' italic='true'>Contains Genre?</run>
+            <run> are examples of how to do this.</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column caption='Image Url (Title)' datatype='string' name='[image_url (title)]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>A URL linking to the primary image associated with this title, such as a movie poster or still frame.</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column aggregation='Avg' caption='IMDB Rating' datatype='real' default-format='n#,##0.0;-#,##0.0' name='[imdb rating]' role='measure' type='quantitative'>
+        <desc>
+          <formatted-text>
+            <run>The IMDb Rating for the title. The rating is between 1 and 10 and given to one decimal place.</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column caption='IMDB Url (Person)' datatype='string' name='[imdbUrl (Person)]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>A full URL to see this person on www.imdb.com.</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column caption='IMDB Url (title)' datatype='string' name='[imdbUrl (title)]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>A full URL to see the name or title on www.imdb.com.</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column aggregation='Avg' caption='Number Of Votes' datatype='integer' name='[number of votes]' role='measure' type='quantitative'>
+        <desc>
+          <formatted-text>
+            <run>A single IMDb user can cast a maximum of one vote. This field can be missing when we do not yet have an IMDb rating for the title in question. 
+
+This can occur either because it does not yet have enough votes, or it has not yet been released. 
+
+A TV series rating is not the weighted average of the ratings of individual episodes. Instead, customers vote separately for the rating of the series as a whole via each title’s series page.</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column caption='Runtime (Minutes)' datatype='integer' name='[runtime (minutes)]' role='measure' type='quantitative'>
+        <desc>
+          <formatted-text>
+            <run>The running time of this title in minutes.</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column caption='Tagline' datatype='string' name='[tagline]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>A tagline is a short description or comment on a title that is often displayed on posters.</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column caption='Title Id' datatype='string' name='[titleId]' role='dimension' type='nominal'>
+        <desc>
+          <formatted-text>
+            <run>The unique identifier used by IMDB</run>
+          </formatted-text>
+        </desc>
+      </column>
+      <column-instance column='[imdb rating]' derivation='Avg' name='[avg:imdb rating:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[number of votes]' derivation='Avg' name='[avg:number of votes:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[imdb rating]' derivation='Count' name='[cnt:imdb rating:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[number of votes]' derivation='Count' name='[cnt:number of votes:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[number of votes]' derivation='CountD' name='[ctd:number of votes:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_659777350463983618]' derivation='User' name='[cum:usr:Calculation_659777350463983618:qk]' pivot='key' type='quantitative'>
+        <table-calc aggregation='Sum' ordering-type='Rows' type='CumTotal' />
+      </column-instance>
+      <column-instance column='[imdb rating]' derivation='Median' name='[med:imdb rating:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Year of Release]' derivation='Min' name='[min:Year of Release:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Best Picture]' derivation='None' name='[none:Best Picture:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Certificate (GB)]' derivation='None' name='[none:Certificate (GB):nk]' pivot='key' type='nominal' />
+      <column-instance column='[Person Name]' derivation='None' name='[none:Person Name:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Year of Release]' derivation='None' name='[none:Year of Release:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[color]' derivation='None' name='[none:color:nk]' pivot='key' type='nominal' />
+      <column-instance column='[imdb rating]' derivation='None' name='[none:imdb rating:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[number of votes]' derivation='Avg' name='[pcto:avg:number of votes:qk:2]' pivot='key' type='quantitative'>
+        <table-calc ordering-field='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[Production Companies (2nd) (group)]' ordering-type='Field' type='PctTotal' />
+      </column-instance>
+      <column-instance column='[number of votes]' derivation='Avg' name='[pcto:avg:number of votes:qk]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='Columns' type='PctTotal' />
+      </column-instance>
+      <column-instance column='[Calculation_659777350463983618]' derivation='User' name='[pcto:usr:Calculation_659777350463983618:qk:2]' pivot='key' type='quantitative'>
+        <table-calc ordering-field='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[color]' ordering-type='Field' type='PctTotal' />
+      </column-instance>
+      <column-instance column='[Calculation_659777350463983618]' derivation='User' name='[pcto:usr:Calculation_659777350463983618:qk:3]' pivot='key' type='quantitative'>
+        <table-calc ordering-field='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[genres (1st)]' ordering-type='Field' type='PctTotal' />
+      </column-instance>
+      <column-instance column='[Calculation_659777350463983618]' derivation='User' name='[pcto:usr:Calculation_659777350463983618:qk:4]' pivot='key' type='quantitative'>
+        <table-calc ordering-field='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[Year of Release]' ordering-type='Field' type='PctTotal' />
+      </column-instance>
+      <column-instance column='[Calculation_659777350463983618]' derivation='User' name='[pcto:usr:Calculation_659777350463983618:qk]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='Rows' type='PctTotal' />
+      </column-instance>
+      <column-instance column='[Calculation_659777350463983618]' derivation='User' name='[rank:usr:Calculation_659777350463983618:qk:1]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='Columns' rank-options='Competition,Descending' type='Rank' />
+      </column-instance>
+      <column-instance column='[Calculation_659777350463983618]' derivation='User' name='[rank:usr:Calculation_659777350463983618:qk]' pivot='key' type='quantitative'>
+        <table-calc ordering-field='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[Country]' ordering-type='Field' rank-options='Competition,Descending' type='Rank' />
+      </column-instance>
+      <column-instance column='[number of votes]' derivation='Sum' name='[sum:number of votes:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_659777350463983618]' derivation='User' name='[usr:Calculation_659777350463983618:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_659777350465458179]' derivation='User' name='[usr:Calculation_659777350465458179:qk]' pivot='key' type='quantitative' />
+      <group caption='Action (Continent,Country)' hidden='true' name='[Action (Continent,Country)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Continent]' />
+          <groupfilter function='level-members' level='[Country]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Genres (1st))' hidden='true' name='[Action (Genres (1st))]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[genres (1st)]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Language)' hidden='true' name='[Action (Language)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Language]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Year of Release) 1' hidden='true' name='[Action (Year of Release) 1]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:Year of Release:ok]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Year of Release)' hidden='true' name='[Action (Year of Release)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Year of Release]' />
+        </groupfilter>
+      </group>
+      <group caption='Tooltip (Best Picture,Title,Year of Release)' hidden='true' name='[Tooltip (Best Picture,Title,Year of Release)]' name-style='unqualified' user:auto-column='sheet_link' user:ui-vit-column='true'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Best Picture]' />
+          <groupfilter function='level-members' level='[Title]' />
+          <groupfilter function='level-members' level='[Year of Release]' />
+        </groupfilter>
+      </group>
+      <group caption='Tooltip (Number of votes (LOD),Number of votes over threshold (LOD),Production Companies (1st),Production Companies (2nd),Title,Year of Release)' hidden='true' name='[Tooltip (Number of votes (LOD),Number of votes over threshold (LOD),Production Companies (1st),Production Companies (2nd),Title,Year of Release)]' name-style='unqualified' user:auto-column='sheet_link' user:ui-vit-column='true'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Calculation_1145321685935230977]' />
+          <groupfilter function='level-members' level='[Calculation_1145321685936238594]' />
+          <groupfilter function='level-members' level='[Production Companies (1st)]' />
+          <groupfilter function='level-members' level='[Production Companies (2nd)]' />
+          <groupfilter function='level-members' level='[Title]' />
+          <groupfilter function='level-members' level='[Year of Release]' />
+        </groupfilter>
+      </group>
+      <group caption='Tooltip (Number of votes (LOD),Production Companies (1st),Production Companies (2nd),Title,Year of Release)' hidden='true' name='[Tooltip (Number of votes (LOD),Production Companies (1st),Production Companies (2nd),Title,Year of Release)]' name-style='unqualified' user:auto-column='sheet_link' user:ui-vit-column='true'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Calculation_1145321685935230977]' />
+          <groupfilter function='level-members' level='[Production Companies (1st)]' />
+          <groupfilter function='level-members' level='[Production Companies (2nd)]' />
+          <groupfilter function='level-members' level='[Title]' />
+          <groupfilter function='level-members' level='[Year of Release]' />
+        </groupfilter>
+      </group>
+      <group caption='Tooltip (Production Companies (1st),Production Companies (2nd),Title,Year of Release)' hidden='true' name='[Tooltip (Production Companies (1st),Production Companies (2nd),Title,Year of Release)]' name-style='unqualified' user:auto-column='sheet_link' user:ui-vit-column='true'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Production Companies (1st)]' />
+          <groupfilter function='level-members' level='[Production Companies (2nd)]' />
+          <groupfilter function='level-members' level='[Title]' />
+          <groupfilter function='level-members' level='[Year of Release]' />
+        </groupfilter>
+      </group>
+      <group caption='Tooltip (Title)' hidden='true' name='[Tooltip (Title)]' name-style='unqualified' user:auto-column='sheet_link' user:ui-vit-column='true'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Title]' />
+        </groupfilter>
+      </group>
+      <group caption='Tooltip (Title,Year of Release)' hidden='true' name='[Tooltip (Title,Year of Release)]' name-style='unqualified' user:auto-column='sheet_link' user:ui-vit-column='true'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Title]' />
+          <groupfilter function='level-members' level='[Year of Release]' />
+        </groupfilter>
+      </group>
+      <group caption='Tooltip (Title,Year of Release,imdbUrl (title))' hidden='true' name='[Tooltip (Title,Year of Release,imdbUrl (title))]' name-style='unqualified' user:auto-column='sheet_link' user:ui-vit-column='true'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Title]' />
+          <groupfilter function='level-members' level='[Year of Release]' />
+          <groupfilter function='level-members' level='[imdbUrl (title)]' />
+        </groupfilter>
+      </group>
+      <drill-paths>
+        <drill-path name='Genre'>
+          <field>[Genres (full list)]</field>
+          <field>[genres (1st)]</field>
+          <field>[genres (2nd)]</field>
+          <field>[genres (3rd)]</field>
+          <field>[Contains Production Company? (copy)_2043508340865888257]</field>
+        </drill-path>
+        <drill-path name='Production Companies'>
+          <field>[Production Companies (List)]</field>
+          <field>[Production Companies (1st)]</field>
+          <field>[Production Companies (2nd)]</field>
+          <field>[Production Companies (3rd)]</field>
+          <field>[Calculation_2283606494275465216]</field>
+        </drill-path>
+        <drill-path name='Production Country'>
+          <field>[Continent]</field>
+          <field>[Region]</field>
+          <field>[Country]</field>
+        </drill-path>
+      </drill-paths>
+      <_.fcp.SchemaViewerObjectModel.false...folder name='Dashboard calculations' role='dimensions'>
+        <folder-item name='[Calculation_1145321685936238594]' type='field' />
+      </_.fcp.SchemaViewerObjectModel.false...folder>
+      <_.fcp.SchemaViewerObjectModel.false...folder name='Movie' role='dimensions'>
+        <folder-item name='[Best Picture]' type='field' />
+        <folder-item name='[Certificate (GB)]' type='field' />
+        <folder-item name='[Certificate (US)]' type='field' />
+        <folder-item name='[Language]' type='field' />
+        <folder-item name='[Plot (medium)]' type='field' />
+        <folder-item name='[Plot]' type='field' />
+        <folder-item name='[Title]' type='field' />
+        <folder-item name='[Year of Release]' type='field' />
+        <folder-item name='[color]' type='field' />
+        <folder-item name='[image_url (title)]' type='field' />
+        <folder-item name='[imdbUrl (title)]' type='field' />
+        <folder-item name='[tagline]' type='field' />
+        <folder-item name='[titleId]' type='field' />
+        <folder-item name='Genre' type='drillpath' />
+        <folder-item name='Production Companies' type='drillpath' />
+        <folder-item name='Production Country' type='drillpath' />
+      </_.fcp.SchemaViewerObjectModel.false...folder>
+      <_.fcp.SchemaViewerObjectModel.false...folder name='Movie' role='measures'>
+        <folder-item name='[Calculation_659777350463983618]' type='field' />
+        <folder-item name='[imdb rating]' type='field' />
+        <folder-item name='[number of votes]' type='field' />
+        <folder-item name='[runtime (minutes)]' type='field' />
+      </_.fcp.SchemaViewerObjectModel.false...folder>
+      <_.fcp.SchemaViewerObjectModel.false...folder name='People (actors, directors)' role='dimensions'>
+        <folder-item name='[Person Name ID]' type='field' />
+        <folder-item name='[Person Name]' type='field' />
+        <folder-item name='[What did they do ?]' type='field' />
+        <folder-item name='[Who did they play ?]' type='field' />
+        <folder-item name='[imdbUrl (Person)]' type='field' />
+      </_.fcp.SchemaViewerObjectModel.false...folder>
+      <_.fcp.SchemaViewerObjectModel.false...folder name='People (actors, directors)' role='measures'>
+        <folder-item name='[Billing (position in cast list)]' type='field' />
+        <folder-item name='[Calculation_659777350465458179]' type='field' />
+      </_.fcp.SchemaViewerObjectModel.false...folder>
+      <_.fcp.SchemaViewerObjectModel.true...folders-common>
+        <folder name='Dashboard calculations'>
+          <folder-item name='[Calculation_1145321685936238594]' type='field' />
+        </folder>
+        <folder name='Movie'>
+          <folder-item name='[Best Picture]' type='field' />
+          <folder-item name='[Calculation_659777350463983618]' type='field' />
+          <folder-item name='[Certificate (GB)]' type='field' />
+          <folder-item name='[Certificate (US)]' type='field' />
+          <folder-item name='[Language]' type='field' />
+          <folder-item name='[Plot (medium)]' type='field' />
+          <folder-item name='[Plot]' type='field' />
+          <folder-item name='[Title]' type='field' />
+          <folder-item name='[Year of Release]' type='field' />
+          <folder-item name='[color]' type='field' />
+          <folder-item name='[image_url (title)]' type='field' />
+          <folder-item name='[imdb rating]' type='field' />
+          <folder-item name='[imdbUrl (title)]' type='field' />
+          <folder-item name='[number of votes]' type='field' />
+          <folder-item name='[runtime (minutes)]' type='field' />
+          <folder-item name='[tagline]' type='field' />
+          <folder-item name='[titleId]' type='field' />
+          <folder-item name='Genre' type='drillpath' />
+          <folder-item name='Production Companies' type='drillpath' />
+          <folder-item name='Production Country' type='drillpath' />
+        </folder>
+        <folder name='People (actors, directors)'>
+          <folder-item name='[Billing (position in cast list)]' type='field' />
+          <folder-item name='[Calculation_659777350465458179]' type='field' />
+          <folder-item name='[Person Name ID]' type='field' />
+          <folder-item name='[Person Name]' type='field' />
+          <folder-item name='[What did they do ?]' type='field' />
+          <folder-item name='[Who did they play ?]' type='field' />
+          <folder-item name='[imdbUrl (Person)]' type='field' />
+        </folder>
+      </_.fcp.SchemaViewerObjectModel.true...folders-common>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-aliased-fields='true' show-structure='false' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Certificate (GB):nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;13+&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;AA&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;G&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;16&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Rejected&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Teen&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;14+&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;All&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;18&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;NR&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;7+&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Caution&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;12&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;H&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Mature&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;6+&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Adult&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;(Banned)&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;U&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Uc&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Unrated&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;X&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;7&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;9+&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;E&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Not Rated&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;R&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;A&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;PG-13&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;12A&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;N/C 12+&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;0+&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;PG&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;R18&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;15&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;N/C 15+&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Best Picture:nk]' type='palette'>
+            <map to='#2a5783'>
+              <bucket>&quot;Winner&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#a5cfe9'>
+              <bucket>&quot;Nominated&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[avg:imdb rating:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[cnt:imdb rating:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[med:imdb rating:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[none:imdb rating:qk]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[cum:usr:Calculation_659777350463983618:qk]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[pcto:usr:Calculation_659777350463983618:qk:2]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[pcto:usr:Calculation_659777350463983618:qk:3]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[pcto:usr:Calculation_659777350463983618:qk:4]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[pcto:usr:Calculation_659777350463983618:qk]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[rank:usr:Calculation_659777350463983618:qk:1]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[rank:usr:Calculation_659777350463983618:qk]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350463983618:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350465458179:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[avg:number of votes:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[cnt:number of votes:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[ctd:number of votes:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[pcto:avg:number of votes:qk:2]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[pcto:avg:number of votes:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[sum:number of votes:qk]&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:color:nk]' type='palette'>
+            <map to='#49525e'>
+              <bucket>&quot;Black and White&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Color,Black and White&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Black and White,Color&quot;</bucket>
+            </map>
+            <map to='#ffae34'>
+              <bucket>&quot;Color&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Person Name:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Brad Pitt&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Jennifer Lawrence&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Sean Connery&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;Sylvester Stallone&quot;</bucket>
+            </map>
+            <map to='#9c755f'>
+              <bucket>&quot;Pierce Brosnan&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Daniel Craig&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Roger Moore&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Melissa McCarthy&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;Jennifer Aniston&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;Timothy Dalton&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Harrison Ford&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;George Lazenby&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United Kingdom&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='Best Actress' />
+        <field-sort-custom-order field='Best Supporting Actor' />
+        <field-sort-custom-order field='Best Actor' />
+        <field-sort-custom-order field='Best Supporting Actress' />
+        <field-sort-custom-order field='Best Picture' />
+        <field-sort-custom-order field='Best Director' />
+        <field-sort-custom-order field='Certificate (GB)' />
+        <field-sort-custom-order field='Certificate (US)' />
+        <field-sort-custom-order field='imdbUrl (Person)' />
+        <field-sort-custom-order field='Person Name' />
+        <field-sort-custom-order field='Person Name ID' />
+        <field-sort-custom-order field='Calculation_659777350465458179' />
+        <field-sort-custom-order field='titleId' />
+        <field-sort-custom-order field='What did they do ?' />
+        <field-sort-custom-order field='Who did they play ?' />
+        <field-sort-custom-order field='Billing (position in cast list)' />
+        <field-sort-custom-order field='Plot (short)' />
+        <field-sort-custom-order field='Plot (medium)' />
+        <field-sort-custom-order field='genres (all)' />
+        <field-sort-custom-order field='Calculation_659777350458699777' />
+        <field-sort-custom-order field='genres (1st)' />
+        <field-sort-custom-order field='genres (2nd)' />
+        <field-sort-custom-order field='genres (3rd)' />
+        <field-sort-custom-order field='runtime (minutes)' />
+        <field-sort-custom-order field='imdbUrl (title)' />
+        <field-sort-custom-order field='Original Title' />
+        <field-sort-custom-order field='Year of Release' />
+        <field-sort-custom-order field='Production Company Countries' />
+        <field-sort-custom-order field='Languages spoken' />
+        <field-sort-custom-order field='color' />
+        <field-sort-custom-order field='Production Companies (all)' />
+        <field-sort-custom-order field='Production Companies (1st)' />
+        <field-sort-custom-order field='Production Companies (2nd)' />
+        <field-sort-custom-order field='image_url (title)' />
+        <field-sort-custom-order field='imdb rating' />
+        <field-sort-custom-order field='number of votes' />
+        <field-sort-custom-order field='tagline' />
+        <field-sort-custom-order field='remappedTo' />
+        <field-sort-custom-order field='year' />
+        <field-sort-custom-order field='event' />
+        <field-sort-custom-order field='Geometry (generated)' />
+        <field-sort-custom-order field='Latitude (generated)' />
+        <field-sort-custom-order field='Longitude (generated)' />
+        <field-sort-custom-order field=':Measure Names' />
+        <field-sort-custom-order field='Multiple Values' />
+      </field-sort-info>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Vote threshold' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='10000'>
+          <calculation class='tableau' formula='10000' />
+          <range granularity='10000' max='2000000' min='0' />
+        </column>
+        <column caption='Production Company' datatype='string' name='[Parameter 3]' param-domain-type='any' role='measure' type='nominal' value='&quot;Marvel Studios&quot;'>
+          <calculation class='tableau' formula='&quot;Marvel Studios&quot;' />
+        </column>
+        <column caption='Genre search' datatype='string' name='[Production Company (copy)_2043508340865777664]' param-domain-type='any' role='measure' type='nominal' value='&quot;Fantasy&quot;'>
+          <calculation class='tableau' formula='&quot;Fantasy&quot;' />
+        </column>
+      </datasource-dependencies>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='Extract' id='Extract (Extract.Extract)_6054C52422754E398C4C0F9470CF4350'>
+            <properties context=''>
+              <relation connection='hyper.14qye6e0nymo6x1622w5m1ufwn23' name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='kpi'>
+      <repository-location derived-from='http://localhost:9100/workbooks/DataplusMovies/wipdataplusmovies?rev=' id='wipdataplusmovies' path='/workbooks/DataplusMovies' revision='' />
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='IMDB movies and people Extract' name='federated.0uydhq71ekj7nt13f7jp60qx5vg3' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0uydhq71ekj7nt13f7jp60qx5vg3'>
+            <column caption='Number of titles' datatype='integer' name='[Calculation_659777350463983618]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='// a count distincy of the number of Titles in the dataset&#13;&#10;COUNTD([titleId])' />
+              <desc>
+                <formatted-text>
+                  <run>The distinct number of people in the database.</run>
+                </formatted-text>
+              </desc>
+            </column>
+            <column-instance column='[imdb rating]' derivation='Avg' name='[avg:imdb rating:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[number of votes]' derivation='Count' name='[cnt:number of votes:qk]' pivot='key' type='quantitative' />
+            <column aggregation='Avg' caption='IMDB Rating' datatype='real' default-format='n#,##0.0;-#,##0.0' name='[imdb rating]' role='measure' type='quantitative'>
+              <desc>
+                <formatted-text>
+                  <run>The IMDb Rating for the title. The rating is between 1 and 10 and given to one decimal place.</run>
+                </formatted-text>
+              </desc>
+            </column>
+            <column aggregation='Avg' caption='Number Of Votes' datatype='integer' name='[number of votes]' role='measure' type='quantitative'>
+              <desc>
+                <formatted-text>
+                  <run>A single IMDb user can cast a maximum of one vote. This field can be missing when we do not yet have an IMDb rating for the title in question. 
+
+This can occur either because it does not yet have enough votes, or it has not yet been released. 
+
+A TV series rating is not the weighted average of the ratings of individual episodes. Instead, customers vote separately for the rating of the series as a whole via each title’s series page.</run>
+                </formatted-text>
+              </desc>
+            </column>
+            <column caption='Title Id' datatype='string' name='[titleId]' role='dimension' type='nominal'>
+              <desc>
+                <formatted-text>
+                  <run>The unique identifier used by IMDB</run>
+                </formatted-text>
+              </desc>
+            </column>
+            <column-instance column='[Calculation_659777350463983618]' derivation='User' name='[usr:Calculation_659777350463983618:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350463983618:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[avg:imdb rating:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[cnt:number of votes:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350463983618:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[avg:imdb rating:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[cnt:number of votes:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <slices>
+            <column>[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-align' value='center' />
+            <format attr='vertical-align' value='center' />
+            <format attr='font-weight' value='bold' />
+            <format attr='text-format' field='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[avg:imdb rating:qk]' value='n#,##0.0&quot; / 10&quot;;-#,##0.0&quot; / 10&quot;' />
+            <format attr='text-format' field='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[cnt:number of votes:qk]' value='n#,##0;-#,##0' />
+            <format attr='font-size' value='26' />
+            <format attr='color' value='#edc948' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-align' value='center' />
+            <format attr='vertical-align' value='center' />
+            <format attr='text-format' field='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[avg:imdb rating:qk]' value='n#,##0.0&quot; / 10&quot;;-#,##0.0&quot; / 10&quot;' />
+            <format attr='text-format' field='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[cnt:number of votes:qk]' value='n#,##0;-#,##0' />
+            <format attr='color' value='#d4d4d4' />
+            <format attr='font-size' value='14' />
+            <format attr='font-family' value='Tableau Medium' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#000000' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+            <format attr='color' value='#f5f5f5' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='header-div'>
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='title'>
+            <format attr='color' value='#f5f5f5' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[Multiple Values]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols>[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[:Measure Names]</cols>
+      </table>
+      <simple-id uuid='{EFF8ED63-2F16-424A-B1EB-8B8F59B0393D}' />
+    </worksheet>
+    <worksheet name='number of movies by year'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontname='Tableau Medium' fontsize='14'>Number of Titles per Year</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <repository-location derived-from='http://localhost:9100/workbooks/DataplusMovies/numberofmoviesbyyear?rev=' id='numberofmoviesbyyear' path='/workbooks/DataplusMovies' revision='' />
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='IMDB movies and people Extract' name='federated.0uydhq71ekj7nt13f7jp60qx5vg3' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0uydhq71ekj7nt13f7jp60qx5vg3'>
+            <column caption='Number of titles' datatype='integer' name='[Calculation_659777350463983618]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='// a count distincy of the number of Titles in the dataset&#13;&#10;COUNTD([titleId])' />
+              <desc>
+                <formatted-text>
+                  <run>The distinct number of people in the database.</run>
+                </formatted-text>
+              </desc>
+            </column>
+            <column aggregation='Sum' datatype='integer' default-format='n0;-0' name='[Year of Release]' role='dimension' type='quantitative'>
+              <desc>
+                <formatted-text>
+                  <run>The year of the earliest release of this title globally.</run>
+                </formatted-text>
+              </desc>
+            </column>
+            <column-instance column='[Year of Release]' derivation='None' name='[none:Year of Release:qk]' pivot='key' type='quantitative' />
+            <column caption='Title Id' datatype='string' name='[titleId]' role='dimension' type='nominal'>
+              <desc>
+                <formatted-text>
+                  <run>The unique identifier used by IMDB</run>
+                </formatted-text>
+              </desc>
+            </column>
+            <column-instance column='[Calculation_659777350463983618]' derivation='User' name='[usr:Calculation_659777350463983618:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='1' field='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350463983618:qk]' field-type='quantitative' fold='true' scope='rows' synchronized='true' type='space' />
+            <format attr='display' class='1' field='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350463983618:qk]' scope='rows' value='false' />
+            <encoding attr='space' class='0' field='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[none:Year of Release:qk]' field-type='quantitative' max='2022' min='2000' range-type='fixed' scope='cols' type='space' />
+            <format attr='width' field='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350463983618:qk]' value='44' />
+            <format attr='title' class='0' field='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[none:Year of Release:qk]' scope='cols' value='' />
+            <format attr='title' class='0' field='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350463983618:qk]' scope='rows' value='' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#000000' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='color' value='#f5f5f5' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='line-visibility' value='on' />
+            <format attr='stroke-color' value='#555555' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-color' value='#555555' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='line-visibility' scope='cols' value='off' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='header-div'>
+            <format attr='line-visibility' scope='cols' value='off' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='title'>
+            <format attr='color' value='#f5f5f5' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350463983618:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.8059999942779541' />
+                <format attr='mark-color' value='#edc948' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350463983618:qk]' y-index='1'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Shape' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='shape' value=':filled/asterisk' />
+                <format attr='size' value='1.6019999980926514' />
+                <format attr='mark-color' value='#edc948' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350463983618:qk] + [federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350463983618:qk])</rows>
+        <cols>[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[none:Year of Release:qk]</cols>
+      </table>
+      <simple-id uuid='{9CC8DBF3-E624-4012-9CDF-BE467941663A}' />
+    </worksheet>
+    <worksheet name='rating by runtime'>
+      <repository-location derived-from='http://localhost:9100/workbooks/DataplusMovies/runtime?rev=' id='runtime' path='/workbooks/DataplusMovies' revision='' />
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='IMDB movies and people Extract' name='federated.0uydhq71ekj7nt13f7jp60qx5vg3' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0uydhq71ekj7nt13f7jp60qx5vg3'>
+            <column aggregation='Avg' caption='IMDB Rating' datatype='real' default-format='n#,##0.0;-#,##0.0' name='[imdb rating]' role='measure' type='quantitative'>
+              <desc>
+                <formatted-text>
+                  <run>The IMDb Rating for the title. The rating is between 1 and 10 and given to one decimal place.</run>
+                </formatted-text>
+              </desc>
+            </column>
+            <column-instance column='[imdb rating]' derivation='None' name='[none:imdb rating:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[runtime (minutes)]' derivation='None' name='[none:runtime (minutes):qk]' pivot='key' type='quantitative' />
+            <column caption='Runtime (Minutes)' datatype='integer' name='[runtime (minutes)]' role='measure' type='quantitative'>
+              <desc>
+                <formatted-text>
+                  <run>The running time of this title in minutes.</run>
+                </formatted-text>
+              </desc>
+            </column>
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[none:runtime (minutes):qk]' included-values='in-range'>
+            <min>1</min>
+            <max>1325</max>
+          </filter>
+          <slices>
+            <column>[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[none:runtime (minutes):qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[none:imdb rating:qk]' value='n#,##0;-#,##0' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[none:imdb rating:qk]' value='n#,##0;-#,##0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#edc948' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[none:imdb rating:qk]</rows>
+        <cols>[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[none:runtime (minutes):qk]</cols>
+      </table>
+      <simple-id uuid='{072CA635-1A24-45A6-A63B-48D924990711}' />
+    </worksheet>
+    <worksheet name='top 10 countries - ranks'>
+      <repository-location derived-from='http://localhost:9100/workbooks/DataplusMovies/top10countries-ranks?rev=' id='top10countries-ranks' path='/workbooks/DataplusMovies' revision='' />
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='IMDB movies and people Extract' name='federated.0uydhq71ekj7nt13f7jp60qx5vg3' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.0uydhq71ekj7nt13f7jp60qx5vg3'>
+            <column caption='Number of titles' datatype='integer' name='[Calculation_659777350463983618]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='// a count distincy of the number of Titles in the dataset&#13;&#10;COUNTD([titleId])' />
+              <desc>
+                <formatted-text>
+                  <run>The distinct number of people in the database.</run>
+                </formatted-text>
+              </desc>
+            </column>
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal'>
+              <desc>
+                <formatted-text>
+                  <run>This is the country of the primary production company associated with this title.
+(</run>
+                  <run bold='true' fontcolor='#ae123a'>Data warning</run>
+                  <run>: the way the IMDB data is stored means many movies do not associate to the country you might at first think they do)</run>
+                </formatted-text>
+              </desc>
+            </column>
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_659777350463983618]' derivation='User' name='[rank:usr:Calculation_659777350463983618:qk:1]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Columns' rank-options='Competition,Descending' type='Rank' />
+            </column-instance>
+            <column caption='Title Id' datatype='string' name='[titleId]' role='dimension' type='nominal'>
+              <desc>
+                <formatted-text>
+                  <run>The unique identifier used by IMDB</run>
+                </formatted-text>
+              </desc>
+            </column>
+            <column-instance column='[Calculation_659777350463983618]' derivation='User' name='[usr:Calculation_659777350463983618:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[none:Country:nk]'>
+            <groupfilter count='10' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='[Calculation_659777350463983618]' function='order' user:ui-marker='order'>
+                <groupfilter function='except' user:ui-domain='cascading' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+                  <groupfilter function='level-members' level='[none:Country:nk]' />
+                  <groupfilter function='member' level='[none:Country:nk]' member='%null%' />
+                </groupfilter>
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[none:Country:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350463983618:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[none:Country:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='color' value='#edc948' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='background-color' value='#000000' />
+            <format attr='background-color' data-class='subtotal' value='#000000' />
+            <format attr='background-color' data-class='total' value='#000000' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#000000' />
+            <format attr='band-size' scope='rows' value='0' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='color' value='#f5f5f5' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='header-div'>
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='title'>
+            <format attr='color' value='#f5f5f5' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[rank:usr:Calculation_659777350463983618:qk:1]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Country:</run>
+                <run fontcolor='#787878'>Æ&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[none:Country:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Rank:</run>
+                <run fontcolor='#787878'>Æ&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[rank:usr:Calculation_659777350463983618:qk:1]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <customized-label>
+              <formatted-text>
+                <run bold='true' fontalignment='1' fontname='Tableau Medium' fontsize='9'><![CDATA[<[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[rank:usr:Calculation_659777350463983618:qk:1]>]]></run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='size' value='1.1641999483108521' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[none:Country:nk]</rows>
+        <cols />
+        <tooltip-style tooltip-mode='none' />
+      </table>
+      <simple-id uuid='{44A6C90F-A265-4CE3-A48C-04FFE85B9135}' />
+    </worksheet>
+    <worksheet name='top 10 countries with most titles'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontname='Tableau Medium' fontsize='14'>Top 10 Production Countries by Number of Titles</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <repository-location derived-from='http://localhost:9100/workbooks/DataplusMovies/numberoftitlesbycountryofproduction?rev=' id='numberoftitlesbycountryofproduction' path='/workbooks/DataplusMovies' revision='' />
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='IMDB movies and people Extract' name='federated.0uydhq71ekj7nt13f7jp60qx5vg3' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.0uydhq71ekj7nt13f7jp60qx5vg3'>
+            <column caption='Number of titles' datatype='integer' name='[Calculation_659777350463983618]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='// a count distincy of the number of Titles in the dataset&#13;&#10;COUNTD([titleId])' />
+              <desc>
+                <formatted-text>
+                  <run>The distinct number of people in the database.</run>
+                </formatted-text>
+              </desc>
+            </column>
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal'>
+              <desc>
+                <formatted-text>
+                  <run>This is the country of the primary production company associated with this title.
+(</run>
+                  <run bold='true' fontcolor='#ae123a'>Data warning</run>
+                  <run>: the way the IMDB data is stored means many movies do not associate to the country you might at first think they do)</run>
+                </formatted-text>
+              </desc>
+            </column>
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
+            <column caption='Title Id' datatype='string' name='[titleId]' role='dimension' type='nominal'>
+              <desc>
+                <formatted-text>
+                  <run>The unique identifier used by IMDB</run>
+                </formatted-text>
+              </desc>
+            </column>
+            <column-instance column='[Calculation_659777350463983618]' derivation='User' name='[usr:Calculation_659777350463983618:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[none:Country:nk]'>
+            <groupfilter count='10' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='[Calculation_659777350463983618]' function='order' user:ui-marker='order'>
+                <groupfilter function='except' user:ui-domain='cascading' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+                  <groupfilter function='level-members' level='[none:Country:nk]' />
+                  <groupfilter function='member' level='[none:Country:nk]' member='%null%' />
+                </groupfilter>
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[none:Country:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[Longitude (generated)]' field-type='quantitative' max='26342353.451342575' min='-24377589.450002719' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[Latitude (generated)]' field-type='quantitative' max='19849712.751952503' min='-12931388.382919312' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='font-weight' value='bold' />
+            <format attr='vertical-align' value='center' />
+            <format attr='text-format' field='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350463983618:qk]' value='' />
+            <format attr='text-align' value='right' />
+            <format attr='font-family' value='Tableau Bold' />
+            <format attr='font-size' value='9' />
+            <format attr='color' value='#e500ff' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350463983618:qk]' value='' />
+            <format attr='color' value='#f5f5f5' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350463983618:qk]' symmetric='false' type='custom-interpolated'>
+              <color-palette custom='true' name='' type='ordered-sequential'>
+                <color>#f1f1f1</color>
+                <color>#f0ecdf</color>
+                <color>#f0e8ce</color>
+                <color>#efe4bd</color>
+                <color>#efe0ac</color>
+                <color>#efdc9b</color>
+                <color>#eed88a</color>
+                <color>#eed47a</color>
+                <color>#edd069</color>
+                <color>#edcc58</color>
+                <color>#edc948</color>
+              </color-palette>
+            </encoding>
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='background-color' value='#000000' />
+            <format attr='background-color' data-class='subtotal' value='#000000' />
+            <format attr='background-color' data-class='total' value='#000000' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#000000' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='color' value='#f5f5f5' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='line-visibility' scope='rows' value='off' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='header-div'>
+            <format attr='line-visibility' scope='rows' value='off' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='title'>
+            <format attr='color' value='#f5f5f5' />
+          </style-rule>
+          <style-rule element='legend'>
+            <format attr='background-color' value='#000000' />
+            <format attr='border-style' value='solid' />
+            <format attr='border-color' value='#000000' />
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='b01002_001e' value='false' />
+            <format attr='enabled' id='b01002_002e' value='false' />
+            <format attr='enabled' id='b01002_003e' value='false' />
+            <format attr='enabled' id='dp02_0001e' value='false' />
+            <format attr='enabled' id='dp02_0015e' value='false' />
+            <format attr='enabled' id='dp03_0027e_plus_dp03_0029e' value='false' />
+            <format attr='enabled' id='dp03_0028e' value='false' />
+            <format attr='enabled' id='dp03_0030e_plus_dp03_0031e' value='false' />
+            <format attr='enabled' id='dp03_0062e' value='false' />
+            <format attr='enabled' id='dp03_0088e' value='false' />
+            <format attr='enabled' id='dp04_0001e' value='false' />
+            <format attr='enabled' id='dp04_0046e' value='false' />
+            <format attr='enabled' id='dp04_0047e' value='false' />
+            <format attr='enabled' id='dp04_0089e' value='false' />
+            <format attr='enabled' id='dp05_0001e' value='false' />
+            <format attr='enabled' id='dp05_0002e_div_dp05_0003e' value='false' />
+            <format attr='enabled' id='dp05_0032e' value='false' />
+            <format attr='enabled' id='dp05_0033e' value='false' />
+            <format attr='enabled' id='dp05_0034e' value='false' />
+            <format attr='enabled' id='dp05_0039e' value='false' />
+            <format attr='enabled' id='dp05_0047e' value='false' />
+            <format attr='enabled' id='dp05_0053e' value='false' />
+            <format attr='enabled' id='dp05_0066e' value='false' />
+            <format attr='enabled' id='dp05_0077e' value='false' />
+            <format attr='enabled' id='admin-1-label-9th-tier' value='false' />
+            <format attr='enabled' id='admin-1-label-8th-tier' value='false' />
+            <format attr='enabled' id='admin-1-label-7th-tier' value='false' />
+            <format attr='enabled' id='admin-1-label-6th-tier' value='false' />
+            <format attr='enabled' id='admin-1-label-5th-tier' value='false' />
+            <format attr='enabled' id='admin-1-label-4th-tier' value='false' />
+            <format attr='enabled' id='admin-1-label-3rd-tier' value='false' />
+            <format attr='enabled' id='admin-1-label-2nd-tier' value='false' />
+            <format attr='enabled' id='admin-1-label-1st-tier' value='false' />
+            <format attr='enabled' id='us-admin-1-label-abbr-3rd-tier' value='false' />
+            <format attr='enabled' id='us-admin-1-label-abbr-2nd-tier' value='false' />
+            <format attr='enabled' id='us-admin-1-label-abbr-1st-tier' value='false' />
+            <format attr='enabled' id='admin-0-boundaries-bg-sub' value='false' />
+            <format attr='enabled' id='admin-1-boundaries-sm-parents-bg' value='false' />
+            <format attr='enabled' id='admin-1-boundaries-md-parents-bg' value='false' />
+            <format attr='enabled' id='admin-1-boundaries-lg-parents-bg' value='false' />
+            <format attr='enabled' id='admin-0-boundaries-dispute-sub' value='false' />
+            <format attr='enabled' id='admin-0-boundaries-sub' value='false' />
+            <format attr='enabled' id='admin-1-boundaries-supress' value='false' />
+            <format attr='enabled' id='admin-1-boundaries-sm-parents' value='false' />
+            <format attr='enabled' id='admin-1-boundaries-md-parents' value='false' />
+            <format attr='enabled' id='admin-1-boundaries-lg-parents' value='false' />
+            <format attr='enabled' id='admin1-water-lines-usa-tableau' value='false' />
+            <format attr='enabled' id='9-dash-line-casing' value='false' />
+            <format attr='enabled' id='9-dash-line' value='false' />
+            <format attr='enabled' id='parks' value='false' />
+            <format attr='enabled' id='landcover_wood' value='false' />
+            <format attr='enabled' id='landcover_scrub' value='false' />
+            <format attr='enabled' id='landcover_grass' value='false' />
+            <format attr='enabled' id='landcover_crop' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0' />
+            <format attr='map-style' value='dark' />
+          </style-rule>
+          <style-rule element='map-data-layer'>
+            <format attr='palette' value='tableau-map-blue-green-light' />
+            <format attr='geo-area-type' value='State' />
+          </style-rule>
+          <style-rule element='quick-filter'>
+            <format attr='background-color' value='#000000' />
+            <format attr='border-style' value='solid' />
+            <format attr='border-color' value='#000000' />
+          </style-rule>
+          <style-rule element='parameter-ctrl'>
+            <format attr='background-color' value='#000000' />
+            <format attr='border-style' value='solid' />
+            <format attr='border-color' value='#000000' />
+          </style-rule>
+          <style-rule element='tooltip'>
+            <format attr='color' value='#333333' />
+          </style-rule>
+          <style-rule element='data-highlighter'>
+            <format attr='background-color' value='#000000' />
+            <format attr='border-style' value='solid' />
+            <format attr='border-color' value='#000000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <lod column='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[none:Country:nk]' />
+              <color column='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350463983618:qk]' />
+              <geometry column='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[Geometry (generated)]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run bold='true'><![CDATA[<[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[none:Country:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run bold='true' fontcolor='#787878'>Rank:</run>
+                <run bold='true' fontcolor='#787878'>Æ&#9;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Titles:</run>
+                <run fontcolor='#787878'>Æ&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350463983618:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='has-halo' value='true' />
+                <format attr='mark-transparency' value='255' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#000000' />
+                <format attr='mark-labels-cull' value='false' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[Latitude (generated)]</rows>
+        <cols>[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{713701A7-F649-4649-A173-8FCC19C3FEB9}' />
+    </worksheet>
+    <worksheet name='top 5 genre'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname='Tableau Medium' fontsize='14'>                 Top 5 Genres by Number of Titles</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <repository-location derived-from='http://localhost:9100/workbooks/DataplusMovies/top5genre?rev=' id='top5genre' path='/workbooks/DataplusMovies' revision='' />
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='IMDB movies and people Extract' name='federated.0uydhq71ekj7nt13f7jp60qx5vg3' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0uydhq71ekj7nt13f7jp60qx5vg3'>
+            <column caption='Number of titles' datatype='integer' name='[Calculation_659777350463983618]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='// a count distincy of the number of Titles in the dataset&#13;&#10;COUNTD([titleId])' />
+              <desc>
+                <formatted-text>
+                  <run>The distinct number of people in the database.</run>
+                </formatted-text>
+              </desc>
+            </column>
+            <column caption='Genres (1st)' datatype='string' name='[genres (1st)]' role='dimension' type='nominal'>
+              <desc>
+                <formatted-text>
+                  <run>The </run>
+                  <run bold='true' underline='true'>first</run>
+                  <run> named Genre in the list of Genres.
+
+Where a movie has multiple Genres, there is no specific order in where they appear in the list. For example. </run>
+                  <run bold='true'>Interstellar</run>
+                  <run>&apos;s genre list is &quot;</run>
+                  <run italic='true'>Adventure, Drama, Sci-Fi</run>
+                  <run>&quot; whereas </run>
+                  <run bold='true'>Guardians of the Galaxy </run>
+                  <run>is &quot;</run>
+                  <run italic='true'>Action, Adventure, Comedy, Sci-Fi</run>
+                  <run>&quot;
+
+If you want to do an accurate Genre analysis, you should create calculations that look for instances of the Genre you are interested in. The parameter </run>
+                  <run bold='true' fontcolor='#b07aa1' italic='true'>Genre Search</run>
+                  <run italic='true'>Æ </run>
+                  <run>and calculation </run>
+                  <run bold='true' fontcolor='#f28e2b' italic='true'>Contains Genre?</run>
+                  <run> are examples of how to do this.</run>
+                </formatted-text>
+              </desc>
+            </column>
+            <column-instance column='[genres (1st)]' derivation='None' name='[none:genres (1st):nk]' pivot='key' type='nominal' />
+            <column caption='Title Id' datatype='string' name='[titleId]' role='dimension' type='nominal'>
+              <desc>
+                <formatted-text>
+                  <run>The unique identifier used by IMDB</run>
+                </formatted-text>
+              </desc>
+            </column>
+            <column-instance column='[Calculation_659777350463983618]' derivation='User' name='[usr:Calculation_659777350463983618:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[none:genres (1st):nk]'>
+            <groupfilter count='5' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='COUNT([genres (1st)])' function='order' user:ui-marker='order'>
+                <groupfilter function='except' user:ui-domain='cascading' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+                  <groupfilter function='level-members' level='[none:genres (1st):nk]' />
+                  <groupfilter function='member' level='[none:genres (1st):nk]' member='%null%' />
+                </groupfilter>
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[none:genres (1st):nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350463983618:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[none:genres (1st):nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350463983618:qk]' scope='cols' value='' />
+            <encoding attr='space' class='0' field='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350463983618:qk]' field-type='quantitative' major-origin='0' major-spacing='10000' scope='cols' type='space' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='size-bar' field='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350463983618:qk]' field-type='quantitative' max-size='1' min-size='0.005' type='centersize' />
+            <encoding attr='color' field='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350463983618:qk]' type='custom-interpolated'>
+              <color-palette custom='true' name='' type='ordered-sequential'>
+                <color>#f1f1f1</color>
+                <color>#f0ecdf</color>
+                <color>#f0e8ce</color>
+                <color>#efe4bd</color>
+                <color>#efe0ac</color>
+                <color>#efdc9b</color>
+                <color>#eed88a</color>
+                <color>#eed47a</color>
+                <color>#edd069</color>
+                <color>#edcc58</color>
+                <color>#edc948</color>
+              </color-palette>
+            </encoding>
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='background-color' value='#000000' />
+            <format attr='background-color' data-class='subtotal' value='#000000' />
+            <format attr='background-color' data-class='total' value='#000000' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#000000' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='color' value='#f5f5f5' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='line-visibility' value='on' />
+            <format attr='stroke-color' value='#555555' />
+            <format attr='line-visibility' scope='rows' value='off' />
+            <format attr='stroke-color' scope='cols' value='#555555' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-color' value='#000000' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='header-div'>
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='title'>
+            <format attr='color' value='#f5f5f5' />
+          </style-rule>
+          <style-rule element='tooltip'>
+            <format attr='color' value='#333333' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350463983618:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.4029999971389771' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[none:genres (1st):nk]</rows>
+        <cols>[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350463983618:qk]</cols>
+      </table>
+      <simple-id uuid='{662763E8-9D07-4F03-B870-8D1B7D32A407}' />
+    </worksheet>
+    <worksheet name='top 5 languages'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontname='Tableau Medium' fontsize='14'>Top 5 Languages by Number of Titles</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <repository-location derived-from='http://localhost:9100/workbooks/DataplusMovies/top5languages?rev=' id='top5languages' path='/workbooks/DataplusMovies' revision='' />
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='IMDB movies and people Extract' name='federated.0uydhq71ekj7nt13f7jp60qx5vg3' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0uydhq71ekj7nt13f7jp60qx5vg3'>
+            <column caption='Number of titles' datatype='integer' name='[Calculation_659777350463983618]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='// a count distincy of the number of Titles in the dataset&#13;&#10;COUNTD([titleId])' />
+              <desc>
+                <formatted-text>
+                  <run>The distinct number of people in the database.</run>
+                </formatted-text>
+              </desc>
+            </column>
+            <column datatype='string' name='[Language]' role='dimension' type='nominal'>
+              <desc>
+                <formatted-text>
+                  <run>This is the primary language spoken in the title</run>
+                </formatted-text>
+              </desc>
+            </column>
+            <column-instance column='[Language]' derivation='None' name='[none:Language:nk]' pivot='key' type='nominal' />
+            <column caption='Title Id' datatype='string' name='[titleId]' role='dimension' type='nominal'>
+              <desc>
+                <formatted-text>
+                  <run>The unique identifier used by IMDB</run>
+                </formatted-text>
+              </desc>
+            </column>
+            <column-instance column='[Calculation_659777350463983618]' derivation='User' name='[usr:Calculation_659777350463983618:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[none:Language:nk]'>
+            <groupfilter count='5' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='[Calculation_659777350463983618]' function='order' user:ui-marker='order'>
+                <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+                  <groupfilter function='level-members' level='[none:Language:nk]' />
+                  <groupfilter function='member' level='[none:Language:nk]' member='%null%' />
+                </groupfilter>
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[none:Language:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350463983618:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[none:Language:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350463983618:qk]' field-type='quantitative' major-origin='0' major-spacing='10000' scope='cols' type='space' />
+            <format attr='title' class='0' field='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350463983618:qk]' scope='cols' value='' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350463983618:qk]' type='custom-interpolated'>
+              <color-palette custom='true' name='' type='ordered-sequential'>
+                <color>#f1f1f1</color>
+                <color>#f0ecdf</color>
+                <color>#f0e8ce</color>
+                <color>#efe4bd</color>
+                <color>#efe0ac</color>
+                <color>#efdc9b</color>
+                <color>#eed88a</color>
+                <color>#eed47a</color>
+                <color>#edd069</color>
+                <color>#edcc58</color>
+                <color>#edc948</color>
+              </color-palette>
+            </encoding>
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='background-color' value='#000000' />
+            <format attr='background-color' data-class='subtotal' value='#000000' />
+            <format attr='background-color' data-class='total' value='#000000' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#000000' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='color' value='#f5f5f5' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='line-visibility' value='on' />
+            <format attr='line-visibility' scope='rows' value='off' />
+            <format attr='stroke-color' value='#555555' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-color' value='#000000' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='title'>
+            <format attr='color' value='#f5f5f5' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350463983618:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#edc948' />
+                <format attr='size' value='1.4029999971389771' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[none:Language:nk]</rows>
+        <cols>[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350463983618:qk]</cols>
+      </table>
+      <simple-id uuid='{A866989A-215A-4720-96C3-E508EB00DD0A}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='IMDB Movie Dashboard'>
+      <repository-location derived-from='http://localhost:9100/workbooks/DataplusMovies/IMDBMovieDashboard?rev=' id='IMDBMovieDashboard' path='/workbooks/DataplusMovies' revision='' />
+      <style />
+      <size maxheight='768' maxwidth='1366' minheight='768' minwidth='1366' sizing-mode='fixed' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='85447' id='22' param='horz' type-v2='layout-flow' w='98828' x='586' y='13511'>
+            <zone h='85447' id='20' type-v2='layout-basic' w='98828' x='586' y='13511'>
+              <zone forceUpdate='true' h='85447' id='5' type-v2='text' w='98828' x='586' y='13511'>
+                <zone-style>
+                  <format attr='border-color' value='#d3b348' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='2' />
+                  <format attr='margin' value='0' />
+                  <format attr='background-color' value='#000000' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone forceUpdate='true' h='12469' id='28' type-v2='text' w='98828' x='586' y='1042'>
+            <formatted-text>
+              <run fontalignment='1' fontcolor='#f5f5f5' fontname='Tableau Semibold' fontsize='24'>IMDB Movie Dashboard</run>
+            </formatted-text>
+            <zone-style>
+              <format attr='border-color' value='#d4d4d4' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='1' />
+              <format attr='margin' value='4' />
+              <format attr='background-color' value='#000000' />
+            </zone-style>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone h='13411' id='31' name='kpi' show-title='false' w='45900' x='1830' y='15104' />
+        <zone h='32813' id='32' name='number of movies by year' w='46559' x='51025' y='13672' />
+        <zone h='28906' id='33' name='top 5 languages' w='40630' x='732' y='67969' />
+        <zone h='28906' id='34' name='top 5 genre' w='40630' x='3660' y='33594' />
+        <zone h='45443' id='35' name='top 10 countries with most titles' w='34773' x='52855' y='51563' />
+        <zone h='39974' id='40' name='top 10 countries - ranks' show-title='false' w='11786' x='86457' y='57161' />
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1550' minheight='1550' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='46' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97916' id='45' param='vert' type-v2='layout-flow' w='98828' x='586' y='1042'>
+                <zone forceUpdate='true' h='12469' id='28' type-v2='text' w='98828' x='586' y='1042'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#f5f5f5' fontname='Tableau Semibold' fontsize='24'>IMDB Movie Dashboard</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#d4d4d4' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='1' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#000000' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='85447' id='5' type-v2='text' w='98828' x='586' y='13511'>
+                  <zone-style>
+                    <format attr='border-color' value='#d3b348' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='2' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#000000' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='252' h='32813' id='32' is-fixed='true' name='number of movies by year' w='46559' x='51025' y='13672'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='103' h='13411' id='31' is-fixed='true' name='kpi' show-title='false' w='45900' x='1830' y='15104'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='222' h='28906' id='34' is-fixed='true' name='top 5 genre' w='40630' x='3660' y='33594'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='45443' id='35' is-fixed='true' name='top 10 countries with most titles' w='34773' x='52855' y='51563'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='39974' id='40' is-fixed='true' name='top 10 countries - ranks' show-title='false' w='11786' x='86457' y='57161'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='222' h='28906' id='33' is-fixed='true' name='top 5 languages' w='40630' x='732' y='67969'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{82B3A9E8-A1F3-4A63-8499-0A73A8BB0299}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='kpi'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='31'>
+            <card type='columns' />
+          </strip>
+          <strip size='31'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[:Measure Names]</field>
+            <field>[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[none:Title:nk]</field>
+          </color-one-way>
+        </highlight>
+        <default-map-tool-selection tool='2' />
+      </viewpoint>
+      <simple-id uuid='{C7DBC3AA-771F-4BE2-B3C3-9C1ED1278BE9}' />
+    </window>
+    <window class='worksheet' name='number of movies by year'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='31'>
+            <card type='columns' />
+          </strip>
+          <strip size='31'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160' />
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[none:Year of Release:qk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{498374B8-4528-4E77-9269-8B21660EE9C0}' />
+    </window>
+    <window class='worksheet' name='rating by runtime'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='31'>
+            <card type='columns' />
+          </strip>
+          <strip size='31'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160' />
+        </edge>
+      </cards>
+      <viewpoint>
+        <default-map-tool-selection tool='2' />
+      </viewpoint>
+      <simple-id uuid='{9B389EB5-53C6-425A-8DCC-76CAA2303C1B}' />
+    </window>
+    <window class='worksheet' name='top 10 countries with most titles'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='31'>
+            <card type='columns' />
+          </strip>
+          <strip size='31'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350463983618:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{D2648A40-C4C8-4F8B-AF3C-CA36AFFFF4AB}' />
+    </window>
+    <window class='worksheet' name='top 10 countries - ranks'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='31'>
+            <card type='columns' />
+          </strip>
+          <strip size='31'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{FFB12878-2E20-48A5-8228-19FD8BBB9922}' />
+    </window>
+    <window class='worksheet' name='top 5 genre'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='31'>
+            <card type='columns' />
+          </strip>
+          <strip size='31'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350463983618:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[none:genres (1st):nk]</field>
+            <field>[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[none:genres (2nd):nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{9012BB3A-12CE-4D5C-B8B9-0BDDFFBF18E0}' />
+    </window>
+    <window class='worksheet' name='top 5 languages'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='31'>
+            <card type='columns' />
+          </strip>
+          <strip size='31'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[usr:Calculation_659777350463983618:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0uydhq71ekj7nt13f7jp60qx5vg3].[none:Language:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{BC118C32-7C75-4466-B3D7-3AB93E14C2C9}' />
+    </window>
+    <window class='dashboard' maximized='true' name='IMDB Movie Dashboard'>
+      <viewpoints>
+        <viewpoint name='kpi'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='number of movies by year'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='top 10 countries - ranks'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='top 10 countries with most titles'>
+          <zoom type='entire-view' />
+          <default-map-tool-selection tool='1' />
+        </viewpoint>
+        <viewpoint name='top 5 genre'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='top 5 languages'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='5' />
+      <simple-id uuid='{EF240FE8-59BD-4D8B-BED9-24A06BA52411}' />
+    </window>
+  </windows>
+</workbook>
