@@ -1,7 +1,7 @@
 # IMDB Movie Dashboard (Tableau)
 
 
-![IMDB Movie Dashboard](https://github.com/annapuu/tableau-imdb-movie-dashboard/assets/149669892/144b1558-38a6-4f36-9f9e-c9eefbfa6257)
+![IMDB Movie Dashboard](https://github.com/annapuu/tableau-imdb-movie-dashboard/assets/149669892/4f1031fa-b6f1-4a09-9b70-b88583ddb967)
 
 *Description coming soon*
 
